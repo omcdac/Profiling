@@ -1,0 +1,19 @@
+#!/bin/bash
+
+gcc -pg base_code.c -o demo
+
+./demo
+
+gprof demo gmon.out > analysis.txt
+
+# Optimize the code
+
+# Rerun the code 
+
+gcc -pg optimized_demo.c -o optimized_demo
+
+# To visualize
+
+pip install gprof2dot
+
+gprof ./mm gmon.out | gprof2dot -w | dot -Tpng -o out.png
